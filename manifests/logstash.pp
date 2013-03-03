@@ -1,5 +1,3 @@
-# elasticsearch needs to be up and running before logstash. oof
-
 package {"apache2":
     ensure => present,
 }
@@ -10,7 +8,7 @@ class {"elasticsearch":
     config       => {
         'node'   => { name => 'logstash-demo' },
     },
-    status => 'disabled',
+    #status => 'disabled',
 }
 
 class {"logstash":
